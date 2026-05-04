@@ -1,0 +1,12 @@
+INDEX VERSION 1.134+C:\Users\170824\Documents\Einfochips\.metadata\.plugins\org.eclipse.jdt.core
+569004832.index
+2472318972.index
+114308293.index
+3895743940.index
+1423902306.index
+1865797976.index
+4125475783.index
+2296305699.index
+3084258051.index
+505676675.index
+2495179121.index

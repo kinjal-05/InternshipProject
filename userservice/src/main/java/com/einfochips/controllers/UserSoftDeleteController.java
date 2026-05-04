@@ -1,6 +1,6 @@
 package com.einfochips.controllers;
 
-import com.einfochips.dtos.UserApiResponse;
+import com.einfochips.dtos.ApiResponse;
 import com.einfochips.services.UserSoftDeleteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -43,10 +43,10 @@ public class UserSoftDeleteController {
 	 *         HTTP Status: - 200 OK - 404 NOT FOUND if user does not exist
 	 */
 	@DeleteMapping("/deleteUser/{id}")
-	public ResponseEntity<UserApiResponse<Void>> softDeleteUser(@PathVariable long id) {
+	public ResponseEntity<ApiResponse<Void>> softDeleteUser(@PathVariable long id) {
 
 		softDeleteUserService.softDeleteUser(id);
 
-		return ResponseEntity.status(HttpStatus.OK).body(UserApiResponse.success(null, "User deleted successfully"));
+		return ResponseEntity.status(HttpStatus.OK).body(ApiResponse.success(null, "User deleted successfully"));
 	}
 }

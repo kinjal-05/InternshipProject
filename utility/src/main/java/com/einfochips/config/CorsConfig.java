@@ -1,31 +1,33 @@
 package com.einfochips.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig {
 
+	@Value("${app.cors.allowed-origins}")
+	private String[] allowedOrigins;
+
 	@Bean
-	public CorsFilter corsFilter() {
-		CorsConfiguration config = new CorsConfiguration();
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
 
-		// Allow productservice to call userservice
-		config.addAllowedOrigin("http://localhost:8080");
-		config.addAllowedOrigin("http://localhost:8081");
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
 
-		// Allow all headers and methods
-		config.addAllowedHeader("*");
-		config.addAllowedMethod("*");
-
-		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-
-		// Apply CORS only to swagger api-docs endpoint
-		source.registerCorsConfiguration("/v3/api-docs/**", config);
-
-		return new CorsFilter(source);
+				registry.addMapping("/**")
+						.allowedOrigins(allowedOrigins)
+						.allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+						.allowedHeaders("*")
+						.allowCredentials(true);
+			}
+		};
 	}
 }

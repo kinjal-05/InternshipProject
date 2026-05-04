@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 import com.einfochips.dtos.ProductMapper;
 import com.einfochips.dtos.ProductResponseDTO;
-import com.einfochips.exceptions.ProductNotFoundException;
+import com.einfochips.exceptions.ResourceNotFoundException;
 import com.einfochips.models.Product;
 import com.einfochips.repositories.ProductRepository;
 
@@ -186,7 +186,7 @@ class ProductGetByIdServiceImplTest {
 	// NOT FOUND TEST
 	// ---------------------------------------------------
 	@Test
-	@DisplayName("Should throw ProductNotFoundException")
+	@DisplayName("Should throw ResourceNotFoundException")
 	void testGetProductByIdNotFound() {
 
 		long id = 999L;
@@ -194,9 +194,9 @@ class ProductGetByIdServiceImplTest {
 		when(productRepository.findActiveById(id))
 				.thenReturn(Optional.empty());
 
-		ProductNotFoundException ex =
+		ResourceNotFoundException ex =
 				assertThrows(
-						ProductNotFoundException.class,
+						ResourceNotFoundException.class,
 						() -> productGetByIdService.getProductById(id)
 				);
 

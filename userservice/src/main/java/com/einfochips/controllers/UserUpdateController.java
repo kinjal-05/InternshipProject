@@ -1,6 +1,6 @@
 package com.einfochips.controllers;
 
-import com.einfochips.dtos.UserApiResponse;
+import com.einfochips.dtos.ApiResponse;
 import com.einfochips.dtos.UserResponseDTO;
 import com.einfochips.dtos.UserUpdateRequestDTO;
 import com.einfochips.services.UserUpdateService;
@@ -40,13 +40,13 @@ public class UserUpdateController {
 	 *         exist
 	 */
 	@PatchMapping("/updateUser/{id}")
-	public ResponseEntity<UserApiResponse<UserResponseDTO>> updateUser(@PathVariable Long id,
-	                                                                   @RequestBody UserUpdateRequestDTO request) {
+	public ResponseEntity<ApiResponse<UserResponseDTO>> updateUser(@PathVariable Long id,
+	                                                               @RequestBody UserUpdateRequestDTO request) {
 
 		UserResponseDTO updatedUser = updateUserService.updateUser(id, request);
 
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(UserApiResponse.success(updatedUser, "User updated successfully"));
+				.body(ApiResponse.success(updatedUser, "User updated successfully"));
 	}
 }
 

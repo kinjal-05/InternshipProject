@@ -1,6 +1,6 @@
 package com.einfochips.controllers;
 
-import com.einfochips.dtos.UserApiResponse;
+import com.einfochips.dtos.ApiResponse;
 import com.einfochips.dtos.UserResponseDTO;
 import com.einfochips.services.UserGetByIdService;
 import lombok.RequiredArgsConstructor;
@@ -39,11 +39,11 @@ public class UserGetByIdController {
 	 *         HTTP Status: - 200 OK - 404 NOT FOUND if user not found
 	 */
 	@GetMapping("/getById/{id}")
-	public ResponseEntity<UserApiResponse<UserResponseDTO>> getUserById(@PathVariable Long id) {
+	public ResponseEntity<ApiResponse<UserResponseDTO>> getUserById(@PathVariable Long id) {
 
 		UserResponseDTO user = getUserByIdService.getUserById(id);
 
-		return ResponseEntity.status(HttpStatus.OK).body(UserApiResponse.success(user, "User fetched successfully"));
+		return ResponseEntity.status(HttpStatus.OK).body(ApiResponse.success(user, "User fetched successfully"));
 	}
 }
 

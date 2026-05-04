@@ -1,5 +1,6 @@
 package com.einfochips.controllers;
 
+import com.einfochips.dtos.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import com.einfochips.dtos.ApiResponse;
 import com.einfochips.dtos.ProductResponseDTO;
 import com.einfochips.dtos.ProductUpdateRequestDTO;
 import com.einfochips.services.ProductUpdateService;
@@ -59,7 +59,7 @@ public class ProductUpdateController {
 	 */
 	@PatchMapping("/{id}")
 	public ResponseEntity<ApiResponse<ProductResponseDTO>> updateProduct(@PathVariable long id,
-			@RequestBody @Valid ProductUpdateRequestDTO request) {
+	                                                                     @RequestBody @Valid ProductUpdateRequestDTO request) {
 		ProductResponseDTO response = productUpdateService.updateProduct(id, request);
 		return ResponseEntity.status(HttpStatus.OK).body(ApiResponse.success(response, "Product updated successfully"));
 	}

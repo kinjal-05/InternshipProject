@@ -1,6 +1,6 @@
 package com.einfochips.controllers;
 
-import com.einfochips.dtos.UserApiResponse;
+import com.einfochips.dtos.ApiResponse;
 import com.einfochips.dtos.UserLoginRequestDTO;
 import com.einfochips.dtos.UserLoginResponseDTO;
 import com.einfochips.services.UserLoginService;
@@ -46,11 +46,11 @@ public class UserLoginController {
 	 *         errors) - 401 UNAUTHORIZED (invalid credentials)
 	 */
 	@PostMapping("/login")
-	public ResponseEntity<UserApiResponse<UserLoginResponseDTO>> login(
+	public ResponseEntity<ApiResponse<UserLoginResponseDTO>> login(
 			@Valid @RequestBody UserLoginRequestDTO request) {
 
 		UserLoginResponseDTO response = loginUserService.login(request);
 
-		return ResponseEntity.status(HttpStatus.OK).body(UserApiResponse.success(response, "Login successful"));
+		return ResponseEntity.status(HttpStatus.OK).body(ApiResponse.success(response, "Login successful"));
 	}
 }

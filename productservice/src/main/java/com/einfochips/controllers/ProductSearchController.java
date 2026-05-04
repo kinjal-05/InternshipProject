@@ -1,5 +1,6 @@
 package com.einfochips.controllers;
 
+import com.einfochips.dtos.ApiResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
-import com.einfochips.dtos.ApiResponse;
 import com.einfochips.dtos.ProductResponseDTO;
 import com.einfochips.services.ProductSearchService;
 

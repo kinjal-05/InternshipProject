@@ -1,11 +1,11 @@
 package com.einfochips.services.impls;
 
+import com.einfochips.exceptions.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import com.einfochips.exceptions.ProductNotFoundException;
 import com.einfochips.repositories.ProductRepository;
 import com.einfochips.services.ProductDeleteService;
 
@@ -60,7 +60,7 @@ public class ProductDeleteServiceImpl implements ProductDeleteService {
 	public void deleteProduct(long id) {
 		int affectedRows = productRepository.delete(id);
 		if (affectedRows == 0) {
-			throw new ProductNotFoundException("Product not found with ID: " + id);
+			throw new ResourceNotFoundException("Product not found with ID: " + id);
 		}
 	}
 

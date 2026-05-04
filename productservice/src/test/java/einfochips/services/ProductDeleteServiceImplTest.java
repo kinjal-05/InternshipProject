@@ -5,7 +5,7 @@ import static org.mockito.Mockito.*;
 
 import java.util.stream.Stream;
 
-import com.einfochips.exceptions.ProductNotFoundException;
+import com.einfochips.exceptions.ResourceNotFoundException;
 import com.einfochips.repositories.ProductRepository;
 
 import com.einfochips.services.impls.ProductDeleteServiceImpl;
@@ -81,7 +81,7 @@ class ProductDeleteServiceImplTest {
 	// NOT FOUND TEST
 	// ---------------------------------------------------
 	@Test
-	@DisplayName("Should throw ProductNotFoundException when no rows affected")
+	@DisplayName("Should throw ResourceNotFoundException when no rows affected")
 	void testDeleteProductNotFound() {
 
 		long id = 999L;
@@ -89,9 +89,9 @@ class ProductDeleteServiceImplTest {
 		when(productRepository.delete(id))
 				.thenReturn(0);
 
-		ProductNotFoundException ex =
+		ResourceNotFoundException ex =
 				assertThrows(
-						ProductNotFoundException.class,
+						ResourceNotFoundException.class,
 						() -> productDeleteService.deleteProduct(id)
 				);
 
@@ -115,9 +115,9 @@ class ProductDeleteServiceImplTest {
 		when(productRepository.delete(id))
 				.thenReturn(0);
 
-		ProductNotFoundException ex =
+		ResourceNotFoundException ex =
 				assertThrows(
-						ProductNotFoundException.class,
+						ResourceNotFoundException.class,
 						() -> productDeleteService.deleteProduct(id)
 				);
 

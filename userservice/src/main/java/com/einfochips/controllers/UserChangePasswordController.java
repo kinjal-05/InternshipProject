@@ -1,7 +1,7 @@
 package com.einfochips.controllers;
 
 
-import com.einfochips.dtos.UserApiResponse;
+import com.einfochips.dtos.ApiResponse;
 import com.einfochips.dtos.UserChangePasswordRequestDTO;
 import com.einfochips.services.UserChangePasswordService;
 import jakarta.validation.Valid;
@@ -46,12 +46,12 @@ public class UserChangePasswordController {
 	 *         UNAUTHORIZED (wrong old password)
 	 */
 	@PatchMapping("/changePassword")
-	public ResponseEntity<UserApiResponse<Void>> changePassword(
+	public ResponseEntity<ApiResponse<Void>> changePassword(
 			@Valid @RequestBody UserChangePasswordRequestDTO request) {
 
 		changePasswordService.changePassword(request);
 
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(UserApiResponse.success(null, "Password changed successfully"));
+				.body(ApiResponse.success(null, "Password changed successfully"));
 	}
 }

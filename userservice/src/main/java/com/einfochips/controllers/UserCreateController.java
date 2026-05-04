@@ -1,6 +1,7 @@
 package com.einfochips.controllers;
 
-import com.einfochips.dtos.UserApiResponse;
+import com.einfochips.config.MessageService;
+import com.einfochips.dtos.ApiResponse;
 import com.einfochips.dtos.UserRequestDTO;
 import com.einfochips.dtos.UserResponseDTO;
 import com.einfochips.services.UserCreateService;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Locale;
 
 /**
  * REST Controller for User-related operations.
@@ -31,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserCreateController {
 	private final UserCreateService createUserService;
-
+	private  final MessageService messageService;
 	/**
 	 * Register a new user.
 	 *
@@ -42,11 +45,12 @@ public class UserCreateController {
 	 *         fails
 	 */
 	@PostMapping("/registerUser")
-	public ResponseEntity<UserApiResponse<UserResponseDTO>> createUser(@RequestBody @Valid UserRequestDTO request) {
+
+	public ResponseEntity<ApiResponse<UserResponseDTO>> createUser(@RequestBody @Valid UserRequestDTO request, Locale locale) {
 
 		UserResponseDTO response = createUserService.createUser(request);
 
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(UserApiResponse.success(response, "User created successfully"));
+				.body(ApiResponse.success(response, "User created successfully"));
 	}
 }

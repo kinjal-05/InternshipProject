@@ -1,6 +1,6 @@
 package com.einfochips.controllers;
 
-import com.einfochips.dtos.UserApiResponse;
+import com.einfochips.dtos.ApiResponse;
 import com.einfochips.dtos.UserResponseDTO;
 import com.einfochips.dtos.UserSearchRequestDTO;
 import com.einfochips.enums.Role;
@@ -50,7 +50,7 @@ public class UserSearchController {
 	 * @return Paginated list of users
 	 */
 	@GetMapping("/search")
-	public ResponseEntity<UserApiResponse<Page<UserResponseDTO>>> searchUsers(
+	public ResponseEntity<ApiResponse<Page<UserResponseDTO>>> searchUsers(
 			@RequestParam(required = false) String email, @RequestParam(required = false) Role role,
 			@RequestParam(required = false) Long createdById, @RequestParam(required = false) Long updatedById,
 			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime fromDate,
@@ -63,6 +63,6 @@ public class UserSearchController {
 		Page<UserResponseDTO> response = searchUserService.searchUsers(request, pageable);
 
 		return ResponseEntity.status(HttpStatus.OK)
-				.body(UserApiResponse.success(response, "Users fetched successfully"));
+				.body(ApiResponse.success(response, "Users fetched successfully"));
 	}
 }

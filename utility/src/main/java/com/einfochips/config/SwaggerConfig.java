@@ -1,71 +1,67 @@
 package com.einfochips.config;
 
-import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.security.SecurityRequirement;
-import io.swagger.v3.oas.models.security.SecurityScheme;
-import io.swagger.v3.oas.models.Components;
+import com.einfochips.dtos.SwaggerProperties;
+import lombok.RequiredArgsConstructor;
+import org.springdoc.core.customizers.OperationCustomizer;
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.parameters.Parameter;
+import io.swagger.v3.oas.models.*;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
+
 @Configuration
-@Profile({ "dev", "qa" })
+@Profile({ "dev"})
+@EnableConfigurationProperties(SwaggerProperties.class)
+@RequiredArgsConstructor
 public class SwaggerConfig {
 
-	// Each service provides its own values via application.properties
-	@Value("${swagger.title}")
-	private String title;
+	private final SwaggerProperties props;
 
-	@Value("${swagger.description}")
-	private String description;
-
-	@Value("${swagger.group}")
-	private String group;
-
-	@Value("${swagger.base-package}")
-	private String basePackage;
-
-	/**
-	 * Creates the global OpenAPI configuration bean.
-	 * This defines the API metadata (title, description, version)
-	 * and sets up JWT Bearer token authentication for all endpoints.
-	 *
-	 * @return OpenAPI instance with info and security configuration
-	 */
 	@Bean
 	public OpenAPI openAPI() {
 		return new OpenAPI()
 				.info(new Info()
-						.title(title)
-						.description(description)
+						.title(props.title())
+						.description(props.description())
 						.version("1.0"))
 				.addSecurityItem(new SecurityRequirement().addList("BearerAuth"))
 				.components(new Components()
-						.addSecuritySchemes("BearerAuth", new SecurityScheme()
-								.name("Authorization")
-								.type(SecurityScheme.Type.HTTP)
-								.scheme("bearer")
-								.bearerFormat("JWT")));
+						.addSecuritySchemes("BearerAuth",
+								new SecurityScheme()
+										.name("Authorization")
+										.type(SecurityScheme.Type.HTTP)
+										.scheme("bearer")
+										.bearerFormat("JWT")));
 	}
 
-	/**
-	 * Creates a grouped API bean to organize endpoints under a named group.
-	 * Each microservice registers its own group using values from application.properties.
-	 * This allows multiple services to appear as separate groups in one Swagger UI.
-	 *
-	 * Example:
-	 *   productservice → group = "product-service", basePackage = "com.einfochips.productservice"
-	 *   userservice    → group = "user-service",    basePackage = "com.einfochips.userservice"
-	 *
-	 * @return GroupedOpenApi instance scoped to this service's controllers
-	 */
+	@Bean
+	public OperationCustomizer globalHeaderCustomizer() {
+		return (operation, handlerMethod) -> {
+			operation.addParametersItem(
+					new Parameter()
+							.in("header")
+							.name("Accept-Language")
+							.description("Language code (en, es, fr)")
+							.required(false)
+			);
+			return operation;
+		};
+	}
+
 	@Bean
 	public GroupedOpenApi groupedOpenApi() {
 		return GroupedOpenApi.builder()
-				.group(group)
-				.packagesToScan(basePackage)
+				.group(props.group())
+				.packagesToScan(props.basePackage())
 				.pathsToMatch("/**")
 				.build();
 	}

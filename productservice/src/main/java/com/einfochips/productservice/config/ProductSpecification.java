@@ -1,12 +1,11 @@
-package com.einfochips.config;
+package com.einfochips.productservice.config;
+
+import com.einfochips.productservice.models.Product;
+import jakarta.persistence.criteria.Predicate;
+import org.springframework.data.jpa.domain.Specification;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.springframework.data.jpa.domain.Specification;
-
-import jakarta.persistence.criteria.Predicate;
-import com.einfochips.models.Product;
 
 /**
  * JPA Specification builder for {@link Product} dynamic query filtering.

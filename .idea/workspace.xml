@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4c82576-4625-4fe1-a717-5767229810bd" name="Changes" comment="" />
+    <list default="true" id="e4c82576-4625-4fe1-a717-5767229810bd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/config/ProductSpecification.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +20,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenRunner">
     <option name="environmentProperties">
@@ -48,21 +55,30 @@
     "JUnit.ProductSearchServiceImplTest.executor": "Run",
     "JUnit.ProductUpdateControllerTest.executor": "Run",
     "JUnit.ProductUpdateServiceImplTest.executor": "Run",
+    "JUnit.UserChangePasswordControllerTest (1).executor": "Run",
+    "JUnit.UserChangePasswordControllerTest.executor": "Run",
+    "JUnit.UserCreateControllerTest.executor": "Run",
+    "JUnit.UserLoginControllerTest.executor": "Run",
+    "JUnit.UserSearchControllerTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ProductServiceApplication (1).executor": "Run",
     "Spring Boot.ProductServiceApplication.executor": "Run",
+    "Spring Boot.UserServiceApplication (1).executor": "Run",
     "Spring Boot.UserServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "languagetask",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/170824/Documents/Einfochips/userservice/src/test/java/einfochips",
+    "last_opened_file_path": "C:/Users/170824/Documents/Einfochips/utility/src/main/java/com/einfochips/utility/config",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/170824/Documents/Einfochips/utility/src/main/java/com/einfochips/Main.java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -72,49 +88,61 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\170824\Documents\Einfochips\userservice\src\test\java\einfochips" />
-      <recent name="C:\Users\170824\Documents\Einfochips\userservice\src\test\java\einfochips\" />
-      <recent name="C:\Users\170824\Documents\Einfochips\userservice\src\test\java\einfochips\config" />
+      <recent name="C:\Users\170824\Documents\Einfochips\utility\src\main\java\com\einfochips\utility\config" />
+      <recent name="C:\Users\170824\Documents\Einfochips\userservice\src\test\java\com\einfochips\userservice" />
+      <recent name="C:\Users\170824\Documents\Einfochips\utility\src\main\java\com\einfochips\utility" />
+      <recent name="C:\Users\170824\Documents\Einfochips\productservice\src\main\java\com\einfochips\productservice" />
+      <recent name="C:\Users\170824\Documents\Einfochips\userservice\src\main\java\com\einfochips\userservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.einfochips.utility" />
+      <recent name="com.einfochips.dtos" />
       <recent name="com.einfochips.config" />
+      <recent name="com.einfochips.exceptions" />
       <recent name="einfochips" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProductServiceApplication">
-    <configuration name="All in productservice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="productservice" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductSearchServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="productservice" />
+  <component name="RunManager" selected="JUnit.UserChangePasswordControllerTest">
+    <configuration name="UserChangePasswordControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="userservice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="einfochips.services.*" />
+          <option name="PATTERN" value="com.einfochips.userservice.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="einfochips.services" />
-      <option name="MAIN_CLASS_NAME" value="einfochips.services.ProductSearchServiceImplTest" />
+      <option name="PACKAGE_NAME" value="com.einfochips.userservice.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.einfochips.userservice.controllers.UserChangePasswordControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductUpdateServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="productservice" />
+    <configuration name="UserCreateControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="userservice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="einfochips.services.*" />
+          <option name="PATTERN" value="com.einfochips.userservice.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="einfochips.services" />
-      <option name="MAIN_CLASS_NAME" value="einfochips.services.ProductUpdateServiceImplTest" />
+      <option name="PACKAGE_NAME" value="com.einfochips.userservice.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.einfochips.userservice.controllers.UserCreateControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserSearchControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="userservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.einfochips.userservice.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.einfochips.userservice.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.einfochips.userservice.controllers.UserSearchControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,13 +154,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="productservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.einfochips.ProductServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.einfochips.productservice.ProductServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.einfochips.*" />
+          <option name="PATTERN" value="com.einfochips.productservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,13 +168,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="userservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.einfochips.UserServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.einfochips.userservice.UserServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.einfochips.*" />
+          <option name="PATTERN" value="com.einfochips.userservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ProductServiceApplication" />
-        <item itemvalue="Spring Boot.UserServiceApplication" />
-        <item itemvalue="JUnit.All in productservice" />
-        <item itemvalue="JUnit.ProductUpdateServiceImplTest" />
-        <item itemvalue="JUnit.ProductSearchServiceImplTest" />
+        <item itemvalue="JUnit.UserChangePasswordControllerTest" />
+        <item itemvalue="JUnit.UserCreateControllerTest" />
+        <item itemvalue="JUnit.UserSearchControllerTest" />
+        <item itemvalue="Spring Boot.UserServiceApplication (1)" />
+        <item itemvalue="Spring Boot.ProductServiceApplication (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -184,11 +212,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/userservice/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/utility/src/main/java/com/einfochips/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

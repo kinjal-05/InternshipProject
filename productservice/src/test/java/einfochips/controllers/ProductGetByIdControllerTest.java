@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.stream.Stream;
 
-import com.einfochips.controllers.ProductGetByIdController;
-import com.einfochips.dtos.ApiResponse;
-import com.einfochips.dtos.ProductResponseDTO;
-import com.einfochips.services.ProductGetByIdService;
+import com.einfochips.productservice.controllers.ProductGetByIdController;
+import com.einfochips.utility.dtos.ApiResponse;
+import com.einfochips.productservice.dtos.ProductResponseDTO;
+import com.einfochips.productservice.services.ProductGetByIdService;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -66,11 +66,11 @@ class ProductGetByIdControllerTest {
 		// Assert
 		assertEquals(HttpStatus.OK, result.getStatusCode());
 		assertNotNull(result.getBody());
-		assertEquals("Product fetched successfully", result.getBody().getMessage());
+		assertEquals("Product fetched successfully", result.getBody().message());
 
-		assertNotNull(result.getBody().getData());
-		assertEquals(id, result.getBody().getData().id());
-		assertEquals("Laptop", result.getBody().getData().name());
+		assertNotNull(result.getBody().data());
+		assertEquals(id, result.getBody().data().id());
+		assertEquals("Laptop", result.getBody().data().name());
 
 		verify(productGetByIdService, times(1)).getProductById(id);
 	}
@@ -109,13 +109,13 @@ class ProductGetByIdControllerTest {
 		// Assert
 		assertEquals(HttpStatus.OK, result.getStatusCode());
 		assertNotNull(result.getBody());
-		assertEquals("Product fetched successfully", result.getBody().getMessage());
+		assertEquals("Product fetched successfully", result.getBody().message());
 
-		assertEquals(id, result.getBody().getData().id());
-		assertEquals(name, result.getBody().getData().name());
-		assertEquals(category, result.getBody().getData().category());
-		assertEquals(price, result.getBody().getData().price());
-		assertEquals(stockQuantity, result.getBody().getData().stockQuantity());
+		assertEquals(id, result.getBody().data().id());
+		assertEquals(name, result.getBody().data().name());
+		assertEquals(category, result.getBody().data().category());
+		assertEquals(price, result.getBody().data().price());
+		assertEquals(stockQuantity, result.getBody().data().stockQuantity());
 
 		verify(productGetByIdService, times(1)).getProductById(id);
 	}
@@ -171,8 +171,8 @@ class ProductGetByIdControllerTest {
 		// Assert
 		assertEquals(HttpStatus.OK, result.getStatusCode());
 		assertNotNull(result.getBody());
-		assertNull(result.getBody().getData());
-		assertEquals("Product fetched successfully", result.getBody().getMessage());
+		assertNull(result.getBody().data());
+		assertEquals("Product fetched successfully", result.getBody().message());
 
 		verify(productGetByIdService).getProductById(id);
 	}

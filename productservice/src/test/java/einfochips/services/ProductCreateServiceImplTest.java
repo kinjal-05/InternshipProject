@@ -7,13 +7,13 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.stream.Stream;
 
-import com.einfochips.dtos.ProductMapper;
-import com.einfochips.dtos.ProductRequestDTO;
-import com.einfochips.dtos.ProductResponseDTO;
-import com.einfochips.models.Product;
-import com.einfochips.repositories.ProductRepository;
+import com.einfochips.productservice.dtos.ProductMapper;
+import com.einfochips.productservice.dtos.ProductRequestDTO;
+import com.einfochips.productservice.dtos.ProductResponseDTO;
+import com.einfochips.productservice.models.Product;
+import com.einfochips.productservice.repositories.ProductRepository;
 
-import com.einfochips.services.impls.ProductCreateServiceImpl;
+import com.einfochips.productservice.services.impls.ProductCreateServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

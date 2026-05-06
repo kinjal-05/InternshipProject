@@ -5,9 +5,9 @@ import static org.mockito.Mockito.*;
 
 import java.util.stream.Stream;
 
-import com.einfochips.controllers.ProductDeleteController;
-import com.einfochips.dtos.ApiResponse;
-import com.einfochips.services.ProductDeleteService;
+import com.einfochips.productservice.controllers.ProductDeleteController;
+import com.einfochips.utility.dtos.ApiResponse;
+import com.einfochips.productservice.services.ProductDeleteService;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -50,8 +50,8 @@ class ProductDeleteControllerTest {
 		// Assert
 		assertEquals(HttpStatus.OK, result.getStatusCode());
 		assertNotNull(result.getBody());
-		assertEquals("Product deleted successfully", result.getBody().getMessage());
-		assertNull(result.getBody().getData());
+		assertEquals("Product deleted successfully", result.getBody().message());
+		assertNull(result.getBody().data());
 
 		verify(productDeleteService, times(1)).deleteProduct(id);
 	}
@@ -74,8 +74,8 @@ class ProductDeleteControllerTest {
 		// Assert
 		assertEquals(HttpStatus.OK, result.getStatusCode());
 		assertNotNull(result.getBody());
-		assertEquals("Product deleted successfully", result.getBody().getMessage());
-		assertNull(result.getBody().getData());
+		assertEquals("Product deleted successfully", result.getBody().message());
+		assertNull(result.getBody().data());
 
 		verify(productDeleteService, times(1)).deleteProduct(id);
 	}
@@ -149,7 +149,7 @@ class ProductDeleteControllerTest {
 
 		// Assert
 		assertEquals(HttpStatus.OK, result.getStatusCode());
-		assertEquals("Product deleted successfully", result.getBody().getMessage());
+		assertEquals("Product deleted successfully", result.getBody().message());
 
 		verify(productDeleteService).deleteProduct(id);
 	}

@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Stream;
 
-import com.einfochips.controllers.ProductSearchController;
-import com.einfochips.dtos.ApiResponse;
-import com.einfochips.dtos.ProductResponseDTO;
-import com.einfochips.services.ProductSearchService;
+import com.einfochips.productservice.controllers.ProductSearchController;
+import com.einfochips.utility.dtos.ApiResponse;
+import com.einfochips.productservice.dtos.ProductResponseDTO;
+import com.einfochips.productservice.services.ProductSearchService;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -77,10 +77,10 @@ class ProductSearchControllerTest {
 		assertNotNull(result.getBody());
 		assertEquals(
 				"Products fetched successfully",
-				result.getBody().getMessage()
+				result.getBody().message()
 		);
 		assertEquals(1,
-				result.getBody().getData().getTotalElements());
+				result.getBody().data().getTotalElements());
 
 		verify(productSearchService, times(1))
 				.searchProducts(null, null, pageable);
@@ -127,11 +127,11 @@ class ProductSearchControllerTest {
 
 		assertEquals(
 				"Products fetched successfully",
-				result.getBody().getMessage()
+				result.getBody().message()
 		);
 
 		assertEquals(1,
-				result.getBody().getData()
+				result.getBody().data()
 						.getContent().size());
 
 		verify(productSearchService, times(1))
@@ -172,13 +172,13 @@ class ProductSearchControllerTest {
 				result.getStatusCode());
 
 		assertTrue(result.getBody()
-				.getData()
+				.data()
 				.getContent()
 				.isEmpty());
 
 		assertEquals(0,
 				result.getBody()
-						.getData()
+						.data()
 						.getTotalElements());
 
 		verify(productSearchService)
@@ -242,11 +242,11 @@ class ProductSearchControllerTest {
 		assertEquals(HttpStatus.OK,
 				result.getStatusCode());
 
-		assertNull(result.getBody().getData());
+		assertNull(result.getBody().data());
 
 		assertEquals(
 				"Products fetched successfully",
-				result.getBody().getMessage()
+				result.getBody().message()
 		);
 
 		verify(productSearchService)

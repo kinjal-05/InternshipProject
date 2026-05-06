@@ -9,11 +9,11 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.stream.Stream;
 
-import com.einfochips.controllers.ProductCreateController;
-import com.einfochips.dtos.ApiResponse;
-import com.einfochips.dtos.ProductRequestDTO;
-import com.einfochips.dtos.ProductResponseDTO;
-import com.einfochips.services.ProductCreateService;
+import com.einfochips.productservice.controllers.ProductCreateController;
+import com.einfochips.utility.dtos.ApiResponse;
+import com.einfochips.productservice.dtos.ProductRequestDTO;
+import com.einfochips.productservice.dtos.ProductResponseDTO;
+import com.einfochips.productservice.services.ProductCreateService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -140,11 +140,11 @@ class ProductCreateControllerTest {
 
 			// Assert — ApiResponse wrapper
 			assertNotNull(result.getBody());
-			assertTrue(result.getBody().isSuccess());
-			assertEquals("Product created successfully", result.getBody().getMessage());
+			assertTrue(result.getBody().success());
+			assertEquals("Product created successfully", result.getBody().message());
 
 			// Assert — payload (use record accessors, NOT getters)
-			ProductResponseDTO data = result.getBody().getData();
+			ProductResponseDTO data = result.getBody().data();
 			assertNotNull(data);
 			assertEquals(1L,                         data.id());
 			assertEquals("Laptop",                   data.name());
@@ -171,8 +171,8 @@ class ProductCreateControllerTest {
 			// Assert
 			assertEquals(HttpStatus.CREATED, result.getStatusCode());
 			assertNotNull(result.getBody());
-			assertNull(result.getBody().getData());
-			assertEquals("Product created successfully", result.getBody().getMessage());
+			assertNull(result.getBody().data());
+			assertEquals("Product created successfully", result.getBody().message());
 
 			verify(productCreateService, times(1)).createProduct(request);
 		}
@@ -228,13 +228,13 @@ class ProductCreateControllerTest {
 			// Assert
 			assertEquals(HttpStatus.CREATED, result.getStatusCode());
 			assertNotNull(result.getBody());
-			assertEquals("Product created successfully", result.getBody().getMessage());
+			assertEquals("Product created successfully", result.getBody().message());
 
-			assertNotNull(result.getBody().getData());
-			assertEquals(name, result.getBody().getData().name());
-			assertEquals(category, result.getBody().getData().category());
-			assertEquals(price, result.getBody().getData().price());
-			assertEquals(stockQuantity, result.getBody().getData().stockQuantity());
+			assertNotNull(result.getBody().data());
+			assertEquals(name, result.getBody().data().name());
+			assertEquals(category, result.getBody().data().category());
+			assertEquals(price, result.getBody().data().price());
+			assertEquals(stockQuantity, result.getBody().data().stockQuantity());
 
 			verify(productCreateService, times(1)).createProduct(req);
 		}
@@ -349,8 +349,8 @@ class ProductCreateControllerTest {
 					() -> assertNotNull(result),
 					() -> assertNotNull(result.getBody()),
 					() -> assertEquals(HttpStatus.CREATED,              result.getStatusCode()),
-					() -> assertTrue(result.getBody().isSuccess()),
-					() -> assertEquals("Product created successfully",  result.getBody().getMessage())
+					() -> assertTrue(result.getBody().success()),
+					() -> assertEquals("Product created successfully",  result.getBody().message())
 			);
 		}
 	}

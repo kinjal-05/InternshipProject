@@ -5,10 +5,10 @@ import static org.mockito.Mockito.*;
 
 import java.util.stream.Stream;
 
-import com.einfochips.exceptions.ResourceNotFoundException;
-import com.einfochips.repositories.ProductRepository;
+import com.einfochips.utility.exceptions.ResourceNotFoundException;
+import com.einfochips.productservice.repositories.ProductRepository;
 
-import com.einfochips.services.impls.ProductDeleteServiceImpl;
+import com.einfochips.productservice.services.impls.ProductDeleteServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -8,13 +8,13 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-import com.einfochips.dtos.ProductMapper;
-import com.einfochips.dtos.ProductResponseDTO;
-import com.einfochips.exceptions.ResourceNotFoundException;
-import com.einfochips.models.Product;
-import com.einfochips.repositories.ProductRepository;
+import com.einfochips.productservice.dtos.ProductMapper;
+import com.einfochips.productservice.dtos.ProductResponseDTO;
+import com.einfochips.utility.exceptions.ResourceNotFoundException;
+import com.einfochips.productservice.models.Product;
+import com.einfochips.productservice.repositories.ProductRepository;
 
-import com.einfochips.services.impls.ProductGetByIdServiceImpl;
+import com.einfochips.productservice.services.impls.ProductGetByIdServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

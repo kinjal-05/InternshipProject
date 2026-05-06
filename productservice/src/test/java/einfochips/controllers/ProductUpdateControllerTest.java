@@ -8,11 +8,11 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.stream.Stream;
 
-import com.einfochips.controllers.ProductUpdateController;
-import com.einfochips.dtos.ApiResponse;
-import com.einfochips.dtos.ProductResponseDTO;
-import com.einfochips.dtos.ProductUpdateRequestDTO;
-import com.einfochips.services.ProductUpdateService;
+import com.einfochips.productservice.controllers.ProductUpdateController;
+import com.einfochips.utility.dtos.ApiResponse;
+import com.einfochips.productservice.dtos.ProductResponseDTO;
+import com.einfochips.productservice.dtos.ProductUpdateRequestDTO;
+import com.einfochips.productservice.services.ProductUpdateService;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -78,14 +78,14 @@ class ProductUpdateControllerTest {
 		assertNotNull(result.getBody());
 		assertEquals(
 				"Product updated successfully",
-				result.getBody().getMessage()
+				result.getBody().message()
 		);
 
 		assertEquals(id,
-				result.getBody().getData().id());
+				result.getBody().data().id());
 
 		assertEquals("Laptop Updated",
-				result.getBody().getData().name());
+				result.getBody().data().name());
 
 		verify(productUpdateService, times(1))
 				.updateProduct(id, request);
@@ -138,20 +138,20 @@ class ProductUpdateControllerTest {
 
 		assertEquals(
 				"Product updated successfully",
-				result.getBody().getMessage()
+				result.getBody().message()
 		);
 
 		assertEquals(name,
-				result.getBody().getData().name());
+				result.getBody().data().name());
 
 		assertEquals(category,
-				result.getBody().getData().category());
+				result.getBody().data().category());
 
 		assertEquals(price,
-				result.getBody().getData().price());
+				result.getBody().data().price());
 
 		assertEquals(stock,
-				result.getBody().getData().stockQuantity());
+				result.getBody().data().stockQuantity());
 
 		verify(productUpdateService, times(1))
 				.updateProduct(id, request);
@@ -237,10 +237,10 @@ class ProductUpdateControllerTest {
 				result.getStatusCode());
 
 		assertEquals("Electronics",
-				result.getBody().getData().category());
+				result.getBody().data().category());
 
 		assertEquals(99,
-				result.getBody().getData().stockQuantity());
+				result.getBody().data().stockQuantity());
 
 		verify(productUpdateService)
 				.updateProduct(id, request);
@@ -314,11 +314,11 @@ class ProductUpdateControllerTest {
 		assertEquals(HttpStatus.OK,
 				result.getStatusCode());
 
-		assertNull(result.getBody().getData());
+		assertNull(result.getBody().data());
 
 		assertEquals(
 				"Product updated successfully",
-				result.getBody().getMessage()
+				result.getBody().message()
 		);
 
 		verify(productUpdateService)

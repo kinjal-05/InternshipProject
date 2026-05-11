@@ -32,20 +32,20 @@ public class GatewayConfig {
 	public RouteLocator routeLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
 
-				// ── USER SERVICE: public endpoints (no auth) ──────────────────
+
 				.route("user-service-public", r -> r
 						.path("/api/v1/users/login", "/api/v1/users/register")
 						.uri(userServiceUrl)
 				)
 
-				// ── USER SERVICE: protected endpoints ─────────────────────────
+
 				.route("user-service-protected", r -> r
 						.path("/api/v1/users/**")
 						.filters(f -> f.filter(jwtAuthenticationFilter.apply(new JwtAuthenticationFilter.Config())))
 						.uri(userServiceUrl)
 				)
 
-				// ── PRODUCT SERVICE: category routes ──────────────────────────
+
 				.route("product-service-categories", r -> r
 						.path("/api/v1/categories/**")
 						.filters(f -> f
@@ -55,7 +55,7 @@ public class GatewayConfig {
 						.uri(productServiceUrl)
 				)
 
-				// ── PRODUCT SERVICE: product routes ───────────────────────────
+
 				.route("product-service-products", r -> r
 						.path("/api/v1/products/**")
 						.filters(f -> f

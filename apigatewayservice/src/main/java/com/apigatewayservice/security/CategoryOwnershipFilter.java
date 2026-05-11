@@ -17,7 +17,6 @@ import java.util.regex.Pattern;
  *
  * No yml change required.
  */
-@Slf4j
 @Component
 public class CategoryOwnershipFilter
 		extends AbstractGatewayFilterFactory<CategoryOwnershipFilter.Config> {
@@ -110,12 +109,6 @@ public class CategoryOwnershipFilter
 						if (Boolean.TRUE.equals(isOwner)) {
 							return chain.filter(exchange);
 						}
-
-						log.warn(
-								"User {} is NOT owner of category {}",
-								userId,
-								categoryId
-						);
 
 						return forbidden(
 								exchange,

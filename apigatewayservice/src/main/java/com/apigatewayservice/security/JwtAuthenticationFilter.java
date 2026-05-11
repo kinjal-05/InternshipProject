@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-@Slf4j
 @Component
 public class JwtAuthenticationFilter extends AbstractGatewayFilterFactory<JwtAuthenticationFilter.Config> {
 
@@ -27,7 +26,6 @@ public class JwtAuthenticationFilter extends AbstractGatewayFilterFactory<JwtAut
 			String authHeader = exchange.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
 
 			if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-				log.warn("Missing or malformed Authorization header");
 				return unauthorized(exchange);
 			}
 
@@ -47,7 +45,6 @@ public class JwtAuthenticationFilter extends AbstractGatewayFilterFactory<JwtAut
 				return chain.filter(mutatedExchange);
 
 			} catch (JwtException e) {
-				log.warn("Invalid JWT token: {}", e.getMessage());
 				return unauthorized(exchange);
 			}
 		};

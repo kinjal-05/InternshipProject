@@ -22,7 +22,7 @@ public class JwtUtil {
 		);
 	}
 
-	// ✅ Validate and extract claims
+	// Validate and extract claims
 	public Claims validateAndGetClaims(String token) {
 		return Jwts.parser()
 				.verifyWith((SecretKey) signingKey)
@@ -31,7 +31,7 @@ public class JwtUtil {
 				.getPayload();
 	}
 
-	// ✅ FIXED: Extract numeric userId safely (NOT from subject)
+	// FIXED: Extract numeric userId safely (NOT from subject)
 	public long getUserId(String token) {
 		Claims claims = validateAndGetClaims(token);
 
@@ -45,20 +45,20 @@ public class JwtUtil {
 			throw new JwtException("Invalid userId type in token");
 		}
 
-		return ((Number) userIdObj).longValue();  // ✅ safe
+		return ((Number) userIdObj).longValue();  // safe
 	}
 
-	// ✅ Extract role
+	// Extract role
 	public String getRole(String token) {
 		return validateAndGetClaims(token).get("role", String.class);
 	}
 
-	// ✅ Optional: extract email (subject)
+	// Optional: extract email (subject)
 	public String getEmail(String token) {
 		return validateAndGetClaims(token).getSubject();
 	}
 
-	// ✅ Validate token
+	//  Validate token
 	public boolean isValid(String token) {
 		try {
 			validateAndGetClaims(token);

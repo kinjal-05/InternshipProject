@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
  * POST /api/v1/products
  * PUT  /api/v1/products/{id}
  */
-@Slf4j
+
 @Component
 public class ProductOwnershipFilter
 		extends AbstractGatewayFilterFactory<ProductOwnershipFilter.Config> {
@@ -101,12 +101,6 @@ public class ProductOwnershipFilter
 								return chain.filter(exchange);
 							}
 
-							log.warn(
-									"User {} is NOT owner of product {} category",
-									userId,
-									productId
-							);
-
 							return forbidden(
 									exchange,
 									"You do not own this product category"
@@ -136,11 +130,7 @@ public class ProductOwnershipFilter
 								return chain.filter(exchange);
 							}
 
-							log.warn(
-									"User {} is NOT owner of category {}",
-									userId,
-									categoryId
-							);
+
 
 							return forbidden(
 									exchange,
@@ -171,8 +161,6 @@ public class ProductOwnershipFilter
 			ServerWebExchange exchange,
 			String reason
 	) {
-
-		log.warn("Access denied: {}", reason);
 
 		exchange.getResponse()
 				.setStatusCode(HttpStatus.FORBIDDEN);

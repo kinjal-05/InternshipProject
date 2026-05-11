@@ -1,0 +1,42 @@
+server:
+  port: 8083
+
+jwt:
+  secret: dGhpcysaXMtbXktc2VjcmV0LWtleS10aGF0LWlzLTI1Ni1iaXQtbG9uZw==
+
+services:
+  product-service:
+    url: http://localhost:8080
+
+  user-service:
+    url: http://localhost:8081
+
+spring:
+  application:
+    name: api-gateway
+
+  main:
+    web-application-type: reactive
+
+  cloud:
+    service-registry:
+      auto-registration:
+        enabled: false
+
+    gateway:
+      default-filters:
+        - RemoveRequestHeader=Cookie
+        - RemoveRequestHeader=X-CSRF-TOKEN
+      routes: []
+
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+    com.apigatewayservice: DEBUG

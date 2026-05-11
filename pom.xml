@@ -7,8 +7,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Parent Project Details -->
-    <groupId>com.einfochips</groupId>
-    <artifactId>einfochips</artifactId>
+    <groupId>com.company</groupId>
+    <artifactId>Company</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
@@ -19,6 +19,7 @@
         <module>userservice</module>
         <module>productservice</module>
         <module>utility</module>
+        <module>apigatewayservice</module>
     </modules>
 
     <!-- Inherit Spring Boot -->

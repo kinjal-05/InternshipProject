@@ -7,13 +7,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.einfochips</groupId>
-        <artifactId>einfochips</artifactId>
+        <groupId>com.company</groupId>
+        <artifactId>Company</artifactId>
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.einfochips</groupId>
+    <groupId>com.productservice</groupId>
     <artifactId>productservice</artifactId>
 
     <dependencies>
@@ -32,9 +32,9 @@
 
 
         <dependency>
-            <groupId>com.einfochips</groupId>
+            <groupId>com.company</groupId>
             <artifactId>utility</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.0</version>
         </dependency>
         <!-- Spring Data JPA -->
         <dependency>

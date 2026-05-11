@@ -5,9 +5,137 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4c82576-4625-4fe1-a717-5767229810bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigatewayservice/src/main/java/com/apigatewayservice/APIGatewayServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigatewayservice/src/main/java/com/apigatewayservice/security/CategoryOwnershipFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigatewayservice/src/main/java/com/apigatewayservice/security/GatewayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigatewayservice/src/main/java/com/apigatewayservice/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigatewayservice/src/main/java/com/apigatewayservice/security/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigatewayservice/src/main/java/com/apigatewayservice/security/ProductOwnershipFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigatewayservice/src/main/java/com/apigatewayservice/security/ProductServiceClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigatewayservice/src/main/java/com/apigatewayservice/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/productservice/src/main/java/com/productservice/controllers/InternalOwnershipController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/config/ProductSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/ProductServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/config/ProductSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/controllers/ProductCreateController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/controllers/ProductDeleteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/controllers/ProductGetByIdController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/controllers/ProductSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/controllers/ProductUpdateController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/dtos/ProductMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/dtos/ProductRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/dtos/ProductResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/dtos/ProductUpdateRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/models/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/repositories/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/ProductCreateService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/ProductDeleteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/ProductGetByIdService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/ProductSearchService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/ProductUpdateService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/impls/ProductCreateServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/impls/ProductDeleteServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/impls/ProductGetByIdServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/impls/ProductSearchServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/java/com/einfochips/productservice/services/impls/ProductUpdateServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/productservice/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/main/resources/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/productservice/src/main/resources/messages_fr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/controllers/ProductCreateControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/controllers/ProductDeleteControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/controllers/ProductGetByIdControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/controllers/ProductSearchControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/controllers/ProductUpdateControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/services/ProductCreateServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/services/ProductDeleteServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/services/ProductGetByIdServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/services/ProductSearchServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productservice/src/test/java/einfochips/services/ProductUpdateServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/UserServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/config/AopConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/config/AuditConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/config/UserSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/controllers/UserChangePasswordController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/controllers/UserCreateController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/controllers/UserGetByIdController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/controllers/UserLoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/controllers/UserSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/controllers/UserSoftDeleteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/controllers/UserUpdateController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserChangePasswordRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserChangePasswordResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserEmailRoleProjection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserLoginRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserLoginResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserSearchRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/dtos/UserUpdateRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/enums/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/security/CustomUserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/security/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/security/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/security/JwtService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/security/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/UserChangePasswordService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/UserCreateService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/UserGetByIdService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/UserLoginService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/UserSearchService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/UserSoftDeleteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/UserUpdateService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/impls/AuditorAwareImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/impls/UserChangePasswordServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/impls/UserCreateServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/impls/UserGetByIdServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/impls/UserLoginServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/impls/UserSearchServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/impls/UserSoftDeleteServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/services/impls/UserUpdateServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/utility/GetActiveUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/main/java/com/einfochips/userservice/utility/MapToUserResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/config/UserSpecificationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/controllers/UserChangePasswordControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/controllers/UserCreateControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/controllers/UserGetByIdControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/controllers/UserLoginControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/controllers/UserSearchControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/controllers/UserSoftDeleteControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/controllers/UserUpdateControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/security/CustomUserDetailsServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/security/CustomUserDetailsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/security/JwtAuthenticationFilterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/security/JwtServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/services/AuditorAwareImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/services/UserChangePasswordServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/services/UserCreateServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/services/UserGetByIdTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/services/UserLoginServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/services/UserSearchServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/services/UserSoftDeleteTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userservice/src/test/java/com/einfochips/userservice/services/UserUpdateServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/utility/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/config/ControllerLoggingAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/config/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/config/LocaleConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/config/MessageConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/config/MessageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/config/ServiceLoggingAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/dtos/ApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/dtos/SwaggerProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/exceptions/BadCredentialsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/exceptions/ResourceAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility/src/main/java/com/einfochips/utility/exceptions/ResourceNotFoundException.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +171,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GatewayServiceApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "JUnit.All in productservice.executor": "Run",
     "JUnit.ProductCreateControllerTest.executor": "Run",
@@ -65,6 +194,8 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.APIGatewayServiceApplication.executor": "Run",
+    "Spring Boot.GatewayServiceApplication.executor": "Run",
     "Spring Boot.ProductServiceApplication (1).executor": "Run",
     "Spring Boot.ProductServiceApplication.executor": "Run",
     "Spring Boot.UserServiceApplication (1).executor": "Run",
@@ -74,11 +205,11 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/170824/Documents/Einfochips/utility/src/main/java/com/einfochips/utility/config",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/170824/Documents/Einfochips/utility/src/main/java/com/einfochips/Main.java",
+    "onboarding.tips.debug.path": "C:/Users/170824/Documents/Einfochips/apigatewayservice/src/main/java/com/apigatewayservice/Main.java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -102,48 +233,16 @@
       <recent name="einfochips" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserChangePasswordControllerTest">
-    <configuration name="UserChangePasswordControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="userservice" />
+  <component name="RunManager" selected="Spring Boot.APIGatewayServiceApplication">
+    <configuration name="GatewayServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gatewayservice.GatewayServiceApplication" />
+      <module name="apigatewayservice (2) (com.apigatewayservice)" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.einfochips.userservice.controllers.*" />
+          <option name="PATTERN" value="com.gatewayservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.einfochips.userservice.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.einfochips.userservice.controllers.UserChangePasswordControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserCreateControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="userservice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.einfochips.userservice.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.einfochips.userservice.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.einfochips.userservice.controllers.UserCreateControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserSearchControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="userservice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.einfochips.userservice.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.einfochips.userservice.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.einfochips.userservice.controllers.UserSearchControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,13 +253,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="APIGatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="productservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.einfochips.productservice.ProductServiceApplication" />
+      <module name="apigatewayservice (2) (com.apigatewayservice)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apigatewayservice.APIGatewayServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.einfochips.productservice.*" />
+          <option name="PATTERN" value="com.apigatewayservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -168,13 +267,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="userservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.einfochips.userservice.UserServiceApplication" />
+      <module name="apigatewayservice (2) (com.apigatewayservice)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gatewayservice.GatewayServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.einfochips.userservice.*" />
+          <option name="PATTERN" value="com.gatewayservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="productservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.productservice.ProductServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.productservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="userservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.userservice.UserServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.userservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -184,11 +311,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserChangePasswordControllerTest" />
-        <item itemvalue="JUnit.UserCreateControllerTest" />
-        <item itemvalue="JUnit.UserSearchControllerTest" />
-        <item itemvalue="Spring Boot.UserServiceApplication (1)" />
-        <item itemvalue="Spring Boot.ProductServiceApplication (1)" />
+        <item itemvalue="Spring Boot.APIGatewayServiceApplication" />
+        <item itemvalue="Application.GatewayServiceApplication" />
+        <item itemvalue="Spring Boot.GatewayServiceApplication" />
+        <item itemvalue="Spring Boot.ProductServiceApplication" />
+        <item itemvalue="Spring Boot.UserServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -212,6 +339,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/userservice/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../apigatewayservice/src/main/java/com/apigateway/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

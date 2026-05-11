@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.einfochips</groupId>
-        <artifactId>einfochips</artifactId>
+        <groupId>com.company</groupId>
+        <artifactId>Company</artifactId>
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.einfochips</groupId>
+    <groupId>com.userservice</groupId>
     <artifactId>userservice</artifactId>
 
     <dependencies>
@@ -24,6 +24,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.5.0</version>
         </dependency>
         <!-- Spring Security -->
         <dependency>
@@ -32,9 +33,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.einfochips</groupId>
+            <groupId>com.company</groupId>
             <artifactId>utility</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.0</version>
         </dependency>
         <!-- Spring Data JPA -->
         <dependency>
@@ -73,11 +74,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Swagger -->
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-        </dependency>
 
         <!-- AOP -->
         <dependency>
